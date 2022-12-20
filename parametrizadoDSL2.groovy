@@ -8,7 +8,7 @@ job('ejemplo3-job-DSL') {
     	} 
   	parameters {
    		stringParam('nombre', defaultValue = 'alberto', description = 'Parametro de cadena para el Job Booleano')
-      		choiceParam('planeta', ['Mercurio', 'Venus', 'Tierrra', 'Marte', 'Jupiter', 'Saturnoo', 'Urano', 'Neptuno'])
+      		choiceParam('planeta', ['Mercurio', 'Venus', 'Tierrra', 'Marte', 'Jupiter', 'Saturno', 'Urano', 'Neptuno'])
       		booleanParam('agente', false)
     	}
   	triggers {
