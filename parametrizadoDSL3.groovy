@@ -1,0 +1,22 @@
+job('ejemplo-job-DSL-CNTG') {
+	description('Job DSL de ejemplo para el curso de Jenkins')
+  	scm {
+      		git('https://github.com/agarciafer/jenkins.job.parametrizado.git', 'main') { node ->
+        		node / gitConfigName('Alberto')
+        		node / gitConfigEmail('agarciaf@outlook.es')
+      		}
+    	} 
+  	parameters {
+   		stringParam('nombre', defaultValue = 'Cntg', description = 'Parametro de cadena para el Job Booleano')
+      		choiceParam('planeta', ['Mercurio', 'Venus', 'Tierrra', 'Marte', 'Jupiter', 'Saturno', 'Urano', 'Neptuno'])
+      		booleanParam('agente', false)
+    	}
+  	triggers {
+    		cron('H/7 * * * *')
+    	}
+  	steps {
+    		shell("bash jobscript.sh")
+    	}
+  	
+    	}
+}
