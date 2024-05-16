@@ -19,4 +19,4 @@ job('ejemplo-job-DSL-CNTG') {
     	}
   	
     	}
-}
+
